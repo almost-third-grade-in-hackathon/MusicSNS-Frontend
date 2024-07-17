@@ -1,8 +1,9 @@
-import Image from "next/image";
+// biome-ignore lint/correctness/noUnusedImports: <explanation>
+import React from "react"
 
-export default function Home() {
-  return (
-    <main>
-    </main>
-  );
+// biome-ignore lint/style/useNamingConvention: <explanation>
+const page = () => {
+	return <div>page</div>
 }
+
+export default page
