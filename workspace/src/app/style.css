@@ -1,0 +1,41 @@
+.all-login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20vh;
+}
+
+.e-mail{
+    margin: 5px;
+}
+
+.password{
+    margin: 5px;
+}
+
+.music-image{
+    margin: 5px;
+    margin-top: 10px;
+}
+
+.text{
+    font-weight: bold;
+    font-size: 20px;
+    margin: 5px;
+}
+
+.btn{
+    background:#007afe;
+    color: white;
+    font-weight: lighter;
+    margin-top: 7px;
+}
+
+.btn:hover{
+    background-color: #006CE1;
+}
+
+.new-people{
+    font-size: 11px;
+}
