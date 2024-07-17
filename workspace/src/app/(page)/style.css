@@ -1,18 +1,17 @@
 body {
-    @apply bg-gray-100 text-black;
+    background-color: white;
+    color: black;
     height: 100%;
     margin: 0;
   }
   
-  /* ページの中央ぞろえや余白の調整を行う */
   .outer-container {
-    @apply bg-white;
+    background-color: white;
     min-height: calc(100vh - 30px);
     margin-top: 30px;
-    display: flex;
     justify-content: center;
   }
-
+  
   h1, h2 {
-    @apply text-black;
+    color: black;
   }
