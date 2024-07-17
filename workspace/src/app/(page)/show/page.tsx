@@ -1,10 +1,15 @@
 import React from 'react';
 import "../style.css"
+import { couldStartTrivia } from 'typescript';
 
 const Page = () => {
   let albumImageUrl: string = '/sample/Himawari.jpg';
   let musicTitle: string = 'Music title';
   let Aritist: string = 'Artist name';
+  let title:string = 'Title';
+  let comment:string = 'Comment comment comment';
+  let countHeart:number = 20;
+  let tag:string = 'pop'
 
   return (
     <div className="outer-container">
@@ -14,9 +19,15 @@ const Page = () => {
             <button className="btn btn-ghost hover:bg-transparent ">
                 <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#000000"><path d="M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z"/></svg>
             </button>
-            <h1 className="text-2xl font-bold text-left text-black">投稿作成</h1>
+            <h1 className="text-2xl font-bold text-left text-black">投稿</h1>
           </div>
-          <form className="create-page">
+
+            {/* タイトル */}
+            <div className="mb-1">
+                <h2 className="text-left font-bold text-xl">{title}</h2>
+            </div>
+
+            <form className="create-page">
             {/* カード */}
             <div className="flex justify-center">
               <div className="card w-80 sm:w-96 my-4 mx-2 bg-white">
@@ -37,30 +48,30 @@ const Page = () => {
               </div>
             </div>
 
-            {/* タイトル入力 */}
-            <div className="mb-4">
-              <h2 className="text-left mb-2">タイトル</h2>
-              <input
-                type="text"
-                placeholder="タイトルを入力"
-                className="input input-bordered w-full max-w-xs bg-white border-2 border-black focus:bg-sky-700"
-              />
+            {/* タグ */}
+            <div className="badge badge-lg border-none text-black bg-gray-200 mb-5">
+                {tag}
             </div>
 
-            {/* コメント入力 */}
-            <div className="mb-4">
-              <h2 className="text-left mb-2">コメント</h2>
-              <textarea
-                className="textarea textarea-bordered w-full bg-white border-2 border-black focus:bg-sky-700 mb-4"
-                placeholder="コメントを入力"
-              ></textarea>
+            {/* コメント */}
+            <div className="card-body p-4 flex-1 bg-gray-200 text-black rounded-xl mb-10">
+                <div className="text-left">
+                    <p className="text-sm">{comment}</p>
+                </div>
             </div>
 
+            {/* いいね */}
+            <div className="tooltip flex justify-center bg-white text-white mb-10" data-tip={countHeart}>
+             <button className="btn btn-circle border-none bg-pink-500 hover:bg-pink-600">
+             <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m480-120-58-52q-101-91-167-157T150-447.5Q111-500 95.5-544T80-634q0-94 63-157t157-63q52 0 99 22t81 62q34-40 81-62t99-22q94 0 157 63t63 157q0 46-15.5 90T810-447.5Q771-395 705-329T538-172l-58 52Zm0-108q96-86 158-147.5t98-107q36-45.5 50-81t14-70.5q0-60-40-100t-100-40q-47 0-87 26.5T518-680h-76q-15-41-55-67.5T300-774q-60 0-100 40t-40 100q0 35 14 70.5t50 81q36 45.5 98 107T480-228Zm0-273Z"/></svg>
+             </button>
+            </div>
+                        
             {/* ボタン */}
             <div className="flex flex-col space-y-4 items-center">
-              <button type="submit" className="btn btn-active btn-neutral w-60 bg-gray-200 text-black hover:bg-sky-700 hover:text-white mb-4">投稿</button>
               <button className="btn btn-outline w-60">戻る</button>
             </div>
+
           </form>
         </div>
       </div>
