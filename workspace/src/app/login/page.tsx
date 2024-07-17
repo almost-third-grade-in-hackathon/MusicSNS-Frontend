@@ -46,7 +46,7 @@ export default function Home() {
 					<text>○○（サイト名）は音楽共有SNSです！</text>
 					<text>ログインしてあなたの好きな音楽を共有しましょう！</text>
 				</div>
-				<EmailPassword />
+				<EmailPassword EmailText="Email" PasswordText="Password" />
 				<a
 					className="link link-info"
 					href="/"
