@@ -11,6 +11,13 @@ body {
     margin-top: 30px;
     justify-content: center;
   }
+
+  .list-container {
+    background-color: white;
+    min-height: calc(100vh - 30px);
+    margin-top: 30px;
+    justify-content: center;
+  }
   
   h1, h2 {
     color: black;

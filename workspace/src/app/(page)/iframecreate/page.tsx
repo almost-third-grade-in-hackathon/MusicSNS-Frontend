@@ -26,32 +26,33 @@ const Page = () => {
               投稿作成
             </h1>
           </div>
-          <form className="create-page">
-            {/* カード */}
-            <div className="flex justify-center">
-              <div className="card w-80 sm:w-96 my-4 mx-2 bg-white">
-                <div className="flex items-center">
-                  {/* 画像表示 */}
-                  <div className="w-24 h-24 rounded-xl overflow-hidden mr-4 flex-shrink-0">
-                    <img
-                      className="w-full h-full object-cover"
-                      src={albumImageUrl}
-                      alt="Album Image"
-                    />
-                  </div>
 
-                  {/* 曲の名前 */}
-                  <div className="card-body p-4 flex-1 bg-gray-200 text-black rounded-xl">
-                    <div className="text-left">
-                      <h2 className="card-title text-lg font-bold">
-                        {musicTitle}
-                      </h2>
-                      <p className="text-sm">{Aritist}</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+        <div className="flex justify-center items-center mb-4">
+            <iframe
+                className="rounded-lg"
+                style={{ borderRadius: '12px' }}
+                src="https://open.spotify.com/embed/track/78W4mTLIh4qoLu92W4IQhO?utm_source=generator&theme=0"
+                width="300"
+                height="80"
+                allowFullScreen
+                allow="encrypted-media"
+                title="Spotify Embed"
+            ></iframe>
+        </div>
+
+         <iframe     
+            className="rounded-lg"
+            style={{ borderRadius: '12px' }}
+            src="https://open.spotify.com/embed/track/78W4mTLIh4qoLu92W4IQhO?utm_source=generator&theme=0"
+            width="100%"
+            height="200"
+            allowFullScreen
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"
+            title="Spotify Embed"
+          ></iframe>
+
+
 
             {/* タイトル入力 */}
             <div className="mb-4">
@@ -82,7 +83,7 @@ const Page = () => {
               </button>
               <button className="btn btn-outline w-60">戻る</button>
             </div>
-          </form>
+        
         </div>
       </div>
     </div>

@@ -1,23 +1,20 @@
 import React from "react";
-import Card from "../../../components/card";
+import IframeCard from "../../../components/ifamecard";
 import "../style.css";
 
 const Page = () => {
   const cardData = [
     {
-      albumImageUrl: "/sample/Himawari.jpg",
-      musicTitle: "Music Title 1",
-      commentTitle: "Comment for Music Title 1",
+        musicUrl: "https://open.spotify.com/embed/track/78W4mTLIh4qoLu92W4IQhO?utm_source=generator&theme=0",
+        commentTitle: "Comment for Music Title 1",
     },
     {
-      albumImageUrl: "/sample/Himawari.jpg",
-      musicTitle: "Music Title 2",
-      commentTitle: "Comment for Music Title 2",
+        musicUrl: "https://open.spotify.com/embed/track/78W4mTLIh4qoLu92W4IQhO?utm_source=generator&theme=0",
+        commentTitle: "Comment for Music Title 2",
     },
     {
-      albumImageUrl: "/sample/Himawari.jpg",
-      musicTitle: "Music Title 3",
-      commentTitle: "Comment for Music Title 3",
+        musicUrl: "https://open.spotify.com/embed/track/78W4mTLIh4qoLu92W4IQhO?utm_source=generator&theme=0",
+        commentTitle: "Comment for Music Title 3",
     },
   ];
 
@@ -44,10 +41,9 @@ const Page = () => {
 
           <div className="flex flex-wrap justify-center">
             {cardData.map((card, index) => (
-              <Card
+              <IframeCard
                 key={index}
-                albumImageUrl={card.albumImageUrl}
-                musicTitle={card.musicTitle}
+                musicUrl={card.musicUrl}
                 commentTitle={card.commentTitle}
               />
             ))}
