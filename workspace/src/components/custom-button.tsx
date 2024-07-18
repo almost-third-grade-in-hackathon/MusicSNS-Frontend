@@ -1,6 +1,5 @@
 // biome-ignore lint/style/useImportType: <explanation>
 import React from "react";
-import "../style.css";
 type Tpops = {
   text: string;
 };
@@ -12,8 +11,8 @@ const CustomButton: React.FC<Tpops> = ({ text }) => {
         className="btn"
         type="submit"
         style={{
+          color:"white",
           background: "#007afe",
-          color: "white",
           fontWeight: "lighter",
           marginTop: "7px",
         }}
