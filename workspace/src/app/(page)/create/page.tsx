@@ -12,12 +12,12 @@ const Page = () => {
   const router = useRouter();
 
   return (
-    <div className="outer-container">
+    <div className="outer-container h-screen bg-white">
       <div className="flex justify-center px-5 safari-hack w-full">
         <div className="max-w-screen-lg w-full p-8">
 
           <div className="flex items-center mb-4">
-            <button className="btn btn-ghost hover:bg-transparent ">
+            <button className="btn btn-ghost hover:bg-transparent " onClick={() => router.back()}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 height="40px"
@@ -49,7 +49,7 @@ const Page = () => {
            </div>
 
 
-          {/*
+          {/*　埋め込みではない形にしようとした
 
           <form className="create-page">
             <div className="flex justify-center">
@@ -110,8 +110,6 @@ const Page = () => {
               <button className="btn btn-outline w-60" type="button" onClick={() => router.back()}>
                 戻る
               </button>
-
-              
             </div>
           {/* </form> */}
         </div>

@@ -1,3 +1,5 @@
+// createでも適用したため、このコードは不要
+
 import React from "react";
 import "../style.css";
 

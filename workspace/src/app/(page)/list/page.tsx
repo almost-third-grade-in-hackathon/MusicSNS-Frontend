@@ -1,3 +1,7 @@
+
+// 埋め込みではない形で表示しようとした
+// 音楽が聴ける形にしたものがiframelistです
+
 "use client";
 
 import React from "react";
@@ -7,6 +11,7 @@ import { useRouter } from "next/navigation";
 
 const Page = () => {
   const router = useRouter();
+  
   const cardData = [
     {
       albumImageUrl: "/sample/Himawari.jpg",
@@ -26,12 +31,12 @@ const Page = () => {
   ];
 
   return (
-    <div className="outer-container bg-white">
+    <div className="outer-container h-screen bg-white">
       <div className="flex justify-center px-5 safari-hack">
         <div className="max-w-screen-lg p-8">
           <div className="flex items-center mb-4">
-            <button className="btn btn-ghost bg-transparent border-none hover:bg-transparent hover:opacity-100">
-              <svg
+          <button className="btn btn-ghost hover:bg-transparent " onClick={() => router.back()}>
+            <svg
                 xmlns="http://www.w3.org/2000/svg"
                 height="40px"
                 viewBox="0 -960 960 960"

@@ -1,3 +1,6 @@
+
+// 曲を再生できるようにしたものがiframeplayです
+
 "use client";
 
 import React from 'react';
@@ -16,12 +19,12 @@ const Page = () => {
   const router = useRouter();
 
   return (
-    <div className="outer-container">
+    <div className="outer-container h-screen">
         <div className="max-w-screen-lg w-full p-8">
         <div className="flex items-center">
             {/* < アイコン */} 
             <div className="flex items-center mb-4">
-                <button className="btn btn-ghost hover:bg-transparent ">
+                <button className="btn btn-ghost hover:bg-transparent " onClick={() => router.back()}>
                     <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#000000"><path d="M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z"/></svg>
                 </button>
             </div>
