@@ -54,7 +54,7 @@ export default function Home() {
         >
           アカウント作成はこちら
         </a>
-        <CustomButton text="ログイン" />
+        <CustomButton text="ログイン" href="/"/>
       </div>
     </main>
   );

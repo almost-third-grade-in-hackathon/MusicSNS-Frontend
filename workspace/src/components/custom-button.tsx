@@ -2,11 +2,13 @@
 import React from "react";
 type Tpops = {
   text: string;
+  href: string;
 };
 
-const CustomButton: React.FC<Tpops> = ({ text }) => {
+const CustomButton: React.FC<Tpops> = ({ text,href }) => {
   return (
     <div>
+      <a href={href}>
       <button
         className="btn bg-blue-500 hover:bg-blue-700"
         type="submit"
@@ -18,6 +20,7 @@ const CustomButton: React.FC<Tpops> = ({ text }) => {
       >
         {text}
       </button>
+      </a>
     </div>
   );
 };

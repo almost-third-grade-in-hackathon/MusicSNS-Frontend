@@ -1,6 +1,5 @@
 "use client";
 import React, { useEffect } from 'react';
-import "../../components/playlist-menu";
 import PlaylistMenu from '../../components/playlist-menu';
 
 const Page: React.FC = () => {
@@ -108,13 +107,13 @@ const Page: React.FC = () => {
       </div>
       <div style={{ marginTop: "10px" }}>
         {/* ここリストで管理したい */}
-        <PlaylistMenu />
-        <PlaylistMenu />
-        <PlaylistMenu />
+        <PlaylistMenu isEdit={false}/>
+        <PlaylistMenu isEdit={false}/>
+        <PlaylistMenu isEdit={false}/>
         <div style={{ width: "100vw", height: 1, background: "gray" }} />
       </div>
       {/* 編集画面に飛ぶリンク貼る */}
-      <a href="/edit" className="link text-blue-500 hover:text-blue-700" style={{ marginLeft: "30px" }}>プレイリストを編集する</a>
+      <a href="/playlist-edit" className="link text-blue-500 hover:text-blue-700" style={{ marginLeft: "30px" }}>プレイリストを編集する</a>
     </div>
   );
 }

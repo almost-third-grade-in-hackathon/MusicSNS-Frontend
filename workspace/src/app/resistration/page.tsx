@@ -43,7 +43,7 @@ export default function Home() {
         <div style={{ margin: "5px" }}>
           <UserName />
         </div>
-        <CustomButton text="アカウント作成" />
+        <CustomButton text="アカウント作成" href="/" />
       </div>
     </main>
   );
