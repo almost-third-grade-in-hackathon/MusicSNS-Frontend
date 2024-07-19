@@ -1,8 +1,12 @@
+"use client";
+
 import React from "react";
 import IframeCard from "../../../components/ifamecard";
 import "../style.css";
+import { useRouter } from "next/navigation";
 
 const Page = () => {
+  const router = useRouter();
   const cardData = [
     {
         musicUrl: "https://open.spotify.com/embed/track/78W4mTLIh4qoLu92W4IQhO?utm_source=generator&theme=0",
@@ -62,7 +66,9 @@ const Page = () => {
           </div>
           <div className="mb-10" />
           <div className="flex justify-center">
-            <button className="btn btn-outline w-60">戻る</button>
+            <button className="btn btn-outline w-60" type="button" onClick={() => router.back()}>
+                  戻る
+            </button> 
           </div>
         </div>
       </div>

@@ -1,16 +1,13 @@
+"use client";
+
 import React from 'react';
+import { useRouter } from "next/navigation";
 
 const Page = () => {
-  let albumImageUrl: string = '/sample/Himawari.jpg';
-  let musicTitle: string = 'Music title';
-  let Aritist: string = 'Artist name';
-  let title:string = 'Title';
-  let comment:string = 'Comment comment comment';
-  let countHeart:number = 20;
-  let tag:string = 'pop';
+  const router = useRouter();
 
   return (
-    <div className="outer-container">
+    <div className="outer-container bg-white">
       <div className="max-w-screen-lg w-full p-8">
         <div className="flex items-center mb-4">
             <button className="btn btn-ghost hover:bg-transparent ">
@@ -34,7 +31,9 @@ const Page = () => {
 
         {/* ボタン */}
         <div className="flex flex-col space-y-4 items-center">
-          <button className="btn btn-outline w-60">戻る</button>
+          <button className="btn btn-outline w-60" type="button" onClick={() => router.back()}>
+            戻る
+          </button>
         </div>
       </div>
     </div>

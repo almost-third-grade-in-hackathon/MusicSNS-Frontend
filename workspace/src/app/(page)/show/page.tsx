@@ -1,6 +1,9 @@
+"use client";
+
 import React from 'react';
 import "../style.css"
 import { couldStartTrivia } from 'typescript';
+import { useRouter } from "next/navigation";
 
 const Page = () => {
   let albumImageUrl: string = '/sample/Himawari.jpg';
@@ -10,6 +13,7 @@ const Page = () => {
   let comment:string = 'Comment comment comment';
   let countHeart:number = 20;
   let tag:string = 'pop'
+  const router = useRouter();
 
   return (
     <div className="outer-container">
@@ -69,7 +73,9 @@ const Page = () => {
                         
             {/* ボタン */}
             <div className="flex flex-col space-y-4 items-center">
-              <button className="btn btn-outline w-60">戻る</button>
+              <button className="btn btn-outline w-60" type="button" onClick={() => router.back()}>
+                戻る
+              </button>
             </div>
 
           </form>

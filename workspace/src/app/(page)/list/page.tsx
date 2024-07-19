@@ -1,8 +1,12 @@
+"use client";
+
 import React from "react";
 import Card from "../../../components/card";
 import "../style.css";
+import { useRouter } from "next/navigation";
 
 const Page = () => {
+  const router = useRouter();
   const cardData = [
     {
       albumImageUrl: "/sample/Himawari.jpg",
@@ -66,7 +70,9 @@ const Page = () => {
           </div>
           <div className="mb-10" />
           <div className="flex justify-center">
-            <button className="btn btn-outline w-60">戻る</button>
+              <button className="btn btn-outline w-60" type="button" onClick={() => router.back()}>
+                戻る
+              </button>
           </div>
         </div>
       </div>

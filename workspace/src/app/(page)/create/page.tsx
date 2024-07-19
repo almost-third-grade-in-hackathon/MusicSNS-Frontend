@@ -1,15 +1,21 @@
+"use client";
+
 import React from "react";
 import "../style.css";
+import { useRouter } from "next/navigation";
 
 const Page = () => {
-  const albumImageUrl: string = "/sample/Himawari.jpg";
-  const musicTitle: string = "Music title";
-  const Aritist: string = "Artist name";
+  // const albumImageUrl: string = "/sample/Himawari.jpg";
+  // const musicTitle: string = "Music title";
+  // const aritist: string = "Artist name";
+  let musicUrl = "https://open.spotify.com/embed/track/78W4mTLIh4qoLu92W4IQhO?utm_source=generator&theme=0";
+  const router = useRouter();
 
   return (
     <div className="outer-container">
       <div className="flex justify-center px-5 safari-hack w-full">
         <div className="max-w-screen-lg w-full p-8">
+
           <div className="flex items-center mb-4">
             <button className="btn btn-ghost hover:bg-transparent ">
               <svg
@@ -26,12 +32,30 @@ const Page = () => {
               投稿作成
             </h1>
           </div>
+          
+          {/* 埋め込みカード */}
+          <div className="flex justify-center items-center mb-4">
+            <iframe
+              className="rounded-lg"
+              style={{ borderRadius: '12px' }}
+              src={musicUrl}
+              width="90%"
+              height="170"
+              allowFullScreen
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"
+              title="Spotify Embed"
+            ></iframe>
+           </div>
+
+
+          {/*
+
           <form className="create-page">
-            {/* カード */}
             <div className="flex justify-center">
               <div className="card w-80 sm:w-96 my-4 mx-2 bg-white">
                 <div className="flex items-center">
-                  {/* 画像表示 */}
+
                   <div className="w-24 h-24 rounded-xl overflow-hidden mr-4 flex-shrink-0">
                     <img
                       className="w-full h-full object-cover"
@@ -40,18 +64,19 @@ const Page = () => {
                     />
                   </div>
 
-                  {/* 曲の名前 */}
+
                   <div className="card-body p-4 flex-1 bg-gray-200 text-black rounded-xl">
                     <div className="text-left">
                       <h2 className="card-title text-lg font-bold">
                         {musicTitle}
                       </h2>
-                      <p className="text-sm">{Aritist}</p>
+                      <p className="text-sm">{aritist}</p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+            */}
 
             {/* タイトル入力 */}
             <div className="mb-4">
@@ -80,9 +105,15 @@ const Page = () => {
               >
                 投稿
               </button>
-              <button className="btn btn-outline w-60">戻る</button>
+               
+               {/* 前のページに戻る */}
+              <button className="btn btn-outline w-60" type="button" onClick={() => router.back()}>
+                戻る
+              </button>
+
+              
             </div>
-          </form>
+          {/* </form> */}
         </div>
       </div>
     </div>
