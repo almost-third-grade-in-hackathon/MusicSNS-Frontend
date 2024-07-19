@@ -8,11 +8,10 @@ const CustomButton: React.FC<Tpops> = ({ text }) => {
   return (
     <div>
       <button
-        className="btn"
+        className="btn bg-blue-500 hover:bg-blue-700"
         type="submit"
         style={{
           color:"white",
-          background: "#007afe",
           fontWeight: "lighter",
           marginTop: "7px",
         }}

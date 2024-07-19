@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <main>
       <div
-        className="all-login"
+        
         style={{
           display: "flex",
           justifyContent: "center",
@@ -16,7 +16,7 @@ export default function Home() {
         }}
       >
         <img
-          className="music-image"
+          
           src="./music-img.png"
           alt="音符の画像"
           style={{
