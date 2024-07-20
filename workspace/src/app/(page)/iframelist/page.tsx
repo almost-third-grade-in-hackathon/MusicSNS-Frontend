@@ -56,7 +56,7 @@ const Page = () => {
           <div className="mb-10" />
           <div className="flex justify-center">
             <button className="btn btn-outline w-60" type="button" onClick={() => router.back()}>
-                  戻る
+                戻る
             </button> 
           </div>
         </div>

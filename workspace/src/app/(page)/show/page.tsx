@@ -4,6 +4,8 @@ import React from 'react';
 import "../style.css"
 import { useRouter } from "next/navigation";
 import TopButton from "../../../components/top-button";
+import MusicCard from "../../../components/music-card";
+
 
 const Page = () => {
   let albumImageUrl: string = '/sample/Himawari.jpg';
@@ -14,6 +16,7 @@ const Page = () => {
   let countHeart:number = 20;
   let tag:string = 'pop'
   const router = useRouter();
+  let track_href:string = 'https://open.spotify.com/embed/track/78W4mTLIh4qoLu92W4IQhO?utm_source=generator&theme=0';
 
   return (
     <div className="outer-container">
@@ -25,26 +28,7 @@ const Page = () => {
                 <h2 className="text-left font-bold text-xl">{title}</h2>
             </div>
 
-            <form className="create-page">
-            {/* カード */}
-            <div className="flex justify-center">
-              <div className="card w-80 sm:w-96 my-4 mx-2 bg-white">
-                <div className="flex items-center">
-                  {/* 画像表示 */}
-                  <div className="w-24 h-24 rounded-xl overflow-hidden mr-4 flex-shrink-0">
-                    <img className="w-full h-full object-cover" src={albumImageUrl} alt="Album Image" />
-                  </div>
-
-                  {/* 曲の名前 */}
-                  <div className="card-body p-4 flex-1 bg-gray-200 text-black rounded-xl">
-                    <div className="text-left">
-                      <h2 className="card-title text-lg font-bold">{musicTitle}</h2>
-                      <p className="text-sm">{Aritist}</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <MusicCard musicUrl={track_href}/>
 
             {/* タグ */}
             <div className="badge badge-lg border-none text-black bg-gray-200 mb-5">
@@ -72,7 +56,7 @@ const Page = () => {
               </button>
             </div>
 
-          </form>
+
         </div>
       </div>
     </div>
