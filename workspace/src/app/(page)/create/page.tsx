@@ -49,7 +49,7 @@ const Page = () => {
            </div>
 
 
-          {/*　埋め込みではない形にしようとした
+          {/*　埋め込みではなく、必要情報だけを取得しようとした（断念）
 
           <form className="create-page">
             <div className="flex justify-center">
