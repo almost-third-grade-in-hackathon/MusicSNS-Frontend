@@ -26,31 +26,31 @@ export default function Home() {
             marginBottom: "10px",
           }}
         />
-        <text
+        <p
           style={{
             fontWeight: "bold",
             fontSize: "20px",
           }}
         >
           サイト名
-        </text>
+        </p>
         <div
           style={{
             display: "flex",
             alignItems: "center",
+            textAlign: "center",
             justifyContent: "center",
             flexDirection: "column",
-            margin: "10px",
+            margin: "10px"
           }}
         >
-          <text>○○（サイト名）は音楽共有SNSです！</text>
-          <text>ログインしてあなたの好きな音楽を共有しましょう！</text>
+          <p>○○（サイト名）は音楽共有SNSです！<br />ログインして好きな音楽を共有しましょう！</p>
         </div>
         <EmailPassword EmailText="Email" PasswordText="Password" />
         <a
           className="link link-info"
           href="/"
-          style={{ fontSize: "11px", marginRight: "145px" }}
+          style={{ fontSize: "11px", marginRight: "145px", margin: "0 auto"}}
         >
           アカウント作成はこちら
         </a>
