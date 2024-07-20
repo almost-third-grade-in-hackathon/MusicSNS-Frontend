@@ -1,7 +1,8 @@
 "use client";
 import React, { useEffect } from 'react';
 import PlaylistMenu from '../../../components/playlist-menu';
-import CustomButton from '../../../components/custom-button'
+import CustomButton from '../../../components/custom-button';
+import TopButton from "../../../components/top-button";
 
 const Page = () => {
 

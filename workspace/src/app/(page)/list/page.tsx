@@ -1,10 +1,8 @@
 
 // 音楽が聴ける形にしたものがiframelistです
-//このページは没になりました
-
+// このページは没になりました
 
 // 埋め込みではない形で表示しようとした
-
 
 "use client";
 
@@ -12,6 +10,7 @@ import React from "react";
 import Card from "../../../components/card";
 import "../style.css";
 import { useRouter } from "next/navigation";
+import TopButton from "../../../components/top-button";
 
 const Page = () => {
   const router = useRouter();
@@ -38,22 +37,7 @@ const Page = () => {
     <div className="outer-container h-screen bg-white">
       <div className="flex justify-center px-5 safari-hack">
         <div className="max-w-screen-lg p-8">
-          <div className="flex items-center mb-4">
-          <button className="btn btn-ghost hover:bg-transparent " onClick={() => router.back()}>
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                height="40px"
-                viewBox="0 -960 960 960"
-                width="40px"
-                fill="#000000"
-              >
-                <path d="M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z" />
-              </svg>
-            </button>
-            <h1 className="text-2xl font-bold text-left text-black">
-              投稿一覧
-            </h1>
-          </div>
+        <TopButton title="投稿一覧" />
 
           <div className="flex flex-wrap justify-center">
             {cardData.map((card, index) => (
