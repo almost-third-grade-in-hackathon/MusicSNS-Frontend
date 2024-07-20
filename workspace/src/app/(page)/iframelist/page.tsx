@@ -1,3 +1,6 @@
+
+// 天羽さんのリポジトリではlistと名付けています
+
 "use client";
 
 import React from "react";
