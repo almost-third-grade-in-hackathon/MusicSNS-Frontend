@@ -1,9 +1,11 @@
-import React from 'react'
 import NameId from '../../../components/name-id'
 import PostsView from '../../../components/posts-view'
+import Genre from '../../../components/genre'
+import Recent from '../../../components/recent'
 
 const page = () => {
   return (
+    <>
     <div style={{
         display:"flex",
         alignItems:"center",
@@ -23,8 +25,22 @@ const page = () => {
         </div>
         <NameId name="名前" id="id"/>
         <PostsView />
+        <div className='mt-10'>
+         <Genre />
+        </div>
+        <Recent />
+        <button className="btn"
+        style={{
+          fontWeight:"lighter",
+           margin:"100px"
+          }}
+        >アカウントを編集する</button>
+        <a style={{color:"red",marginBottom:"100px"}} href='./login'>ログアウト</a>
+
+        </div>
+  </>
         
-    </div>
+    
   )
 }
 
