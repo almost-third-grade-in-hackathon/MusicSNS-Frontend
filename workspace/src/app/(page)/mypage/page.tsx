@@ -36,7 +36,6 @@ const page = () => {
           }}
         >アカウントを編集する</button>
         <a style={{color:"red",marginBottom:"100px"}} href='./login'>ログアウト</a>
-
         </div>
   </>
         

@@ -1,76 +1,111 @@
-
-// 天羽さんのリポジトリではlistと名付けています
-
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import IframeCard from "../../../components/ifamecard";
-import "../style.css";
 import { useRouter } from "next/navigation";
+import TopButton from "../../../components/top-button";
+
+interface CardData {
+  id: number;
+  musicUrl: string;
+  commentTitle: string;
+}
 
 const Page = () => {
   const router = useRouter();
-  const cardData = [
-    {
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const [cardData, setCardData] = useState<CardData[]>([
+      {
+        id: 1,
         musicUrl: "https://open.spotify.com/embed/track/78W4mTLIh4qoLu92W4IQhO?utm_source=generator&theme=0",
         commentTitle: "Comment for Music Title 1",
-    },
-    {
+      },
+      {
+        id: 2,
         musicUrl: "https://open.spotify.com/embed/track/78W4mTLIh4qoLu92W4IQhO?utm_source=generator&theme=0",
         commentTitle: "Comment for Music Title 2",
-    },
-    {
+      },
+      {
+        id: 3,
         musicUrl: "https://open.spotify.com/embed/track/78W4mTLIh4qoLu92W4IQhO?utm_source=generator&theme=0",
         commentTitle: "Comment for Music Title 3",
-    },
-  ];
+      },
+      {
+        id: 4,
+        musicUrl: "https://open.spotify.com/embed/track/78W4mTLIh4qoLu92W4IQhO?utm_source=generator&theme=0",
+        commentTitle: "Comment for Music Title 4",
+      },
+    ]);
+
+  const [loading, setLoading] = useState(true);
+  const itemsPerPage = 2;
+
+  useEffect(() => {
+    const fetchData = async () => {
+      setLoading(true);
+      try {
+        const response = await fetch("/api/posts");
+        const data: CardData[] = await response.json();
+        setCardData(data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+      setLoading(false);
+    };
+
+    fetchData();
+  }, [currentPage]); 
+
+  const totalPages = Math.ceil(cardData.length / itemsPerPage);
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+  };
+
+  const paginatedData = cardData.slice(
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage
+  );
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div className="outer-container h-screen bg-white">
       <div className="flex justify-center px-5 safari-hack">
         <div className="max-w-screen-lg p-8">
-          <div className="flex items-center mb-4">
-            <button className="btn btn-ghost hover:bg-transparent " onClick={() => router.back()}>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                height="40px"
-                viewBox="0 -960 960 960"
-                width="40px"
-                fill="#000000"
-              >
-                <path d="M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z" />
-              </svg>
-            </button>
-            <h1 className="text-2xl font-bold text-left text-black">
-              投稿一覧
-            </h1>
-          </div>
+          <TopButton title="投稿一覧" />
 
           <div className="flex flex-wrap justify-center">
-            {cardData.map((card, index) => (
+            {paginatedData.map((card) => (
               <IframeCard
-                key={index}
+                key={card.id}
                 musicUrl={card.musicUrl}
                 commentTitle={card.commentTitle}
               />
             ))}
           </div>
 
-          {/*ペジネーション*/}
+          {/* ペジネーション */}
           <div className="mb-10" />
           <div className="flex justify-center mt-4">
             <div className="join">
-              <button className="join-item btn">1</button>
-              <button className="join-item btn">2</button>
-              <button className="join-item btn btn-disabled">...</button>
-              <button className="join-item btn">99</button>
-              <button className="join-item btn">100</button>
+              {Array.from({ length: totalPages }, (_, i) => (
+                <button
+                  key={i + 1}
+                  className={`join-item btn ${currentPage === i + 1 ? "btn-active" : ""}`}
+                  onClick={() => handlePageChange(i + 1)}
+                >
+                  {i + 1}
+                </button>
+              ))}
             </div>
           </div>
           <div className="mb-10" />
           <div className="flex justify-center">
             <button className="btn btn-outline w-60" type="button" onClick={() => router.back()}>
-                  戻る
+              戻る
             </button> 
           </div>
         </div>

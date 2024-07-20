@@ -1,30 +1,27 @@
 "use client";
 
 import React from 'react';
-import { useRouter } from "next/navigation";
+import { useRouter } from 'next/navigation';
+import TopButton from '../../../components/top-button';
 
 const Page = () => {
   const router = useRouter();
+  const track_href = 'https://open.spotify.com/embed/track/78W4mTLIh4qoLu92W4IQhO?utm_source=generator&theme=0';
+
+  const handleClick = () => {
+    router.push(`/create?track=${encodeURIComponent(track_href)}`);
+  };
 
   return (
     <div className="outer-container h-screen bg-white">
       <div className="max-w-screen-lg w-full p-8">
-        <div className="flex items-center mb-4">
-        <button className="btn btn-ghost hover:bg-transparent " onClick={() => router.back()}>
-          <svg xmlns="http://www.w3.org/2000/svg" 
-              height="40px" 
-              viewBox="0 -960 960 960" 
-              width="40px" fill="#000000">
-              <path d="M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z"/>
-            </svg>
-            </button>
-        </div>
+        <TopButton title="" />
 
-        <div className="flex justify-center items-center mb-4">
+        <div className="flex justify-center items-center mb-10">
           <iframe
             className="rounded-lg"
             style={{ borderRadius: '12px' }}
-            src="https://open.spotify.com/embed/track/78W4mTLIh4qoLu92W4IQhO?utm_source=generator&theme=0"
+            src={track_href}
             width="100%"
             height="352"
             allowFullScreen
@@ -32,6 +29,12 @@ const Page = () => {
             loading="lazy"
             title="Spotify Embed"
           ></iframe>
+        </div>
+
+        <div className="flex flex-col space-y-4 items-center mb-4">
+          <button className="btn btn-active btn-neutral w-60 bg-gray-200 text-black hover:bg-sky-700 hover:text-white mb-4" type="button" onClick={handleClick}>
+            投稿を新規作成
+          </button>
         </div>
 
         {/* ボタン */}
