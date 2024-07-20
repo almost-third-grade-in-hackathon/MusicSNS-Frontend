@@ -6,14 +6,14 @@ export default function Home() {
   return (
     <LoginProvider>
       <main>
-      <Unauthenticated>
-        <SignInButton />
-      </Unauthenticated>
-      <Authenticated>
-        <UserButton />
-        <p>test</p>
-      </Authenticated>
-    </main>
+        <Unauthenticated>
+          <SignInButton />
+        </Unauthenticated>
+        <Authenticated>
+          <UserButton />
+          <p>test</p>
+        </Authenticated>
+      </main>
     </LoginProvider>
   );
 }
